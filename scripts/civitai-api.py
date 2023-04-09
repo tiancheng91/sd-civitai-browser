@@ -316,7 +316,7 @@ def save_image_files(preview_image_html, model_filename, content_type, use_new_f
     urllib.request.install_opener(opener)
 
     for i, img_url in enumerate(img_urls):
-        filename = f'{name}_{i}.png'
+        filename = f'{name}_{i}.png' if i > 0 else f'{name}.preview.png'
         img_url = img_url.replace("https", "http").replace("=","%3D")
 
         print(img_url, filename)
